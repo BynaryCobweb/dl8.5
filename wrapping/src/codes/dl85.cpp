@@ -109,5 +109,15 @@ string search(//std::function<float(Array<int>::iterator)> callback,
 
     out += "RunTime: " + std::to_string((clock() - t) / (float) CLOCKS_PER_SEC);
 
+    //delete resources once we have finished
+    if (iterative) {
+        delete ((LcmIterative *) lcm);
+    }
+    else {
+        delete ((LcmPruned *) lcm);
+    }
+
+    delete trie;
+
     return out;
 }
