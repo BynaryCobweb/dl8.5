@@ -118,6 +118,8 @@ string search(//std::function<float(Array<int>::iterator)> callback,
     }
 
     delete trie;
+    delete query;
+    delete dataReader;
 
     return out;
 }
